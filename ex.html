@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            /* font:oblique small-caps bold 1rem/24px cursive;  */
+            font:oblique bold 1rem/20px cursive;
+            text-align: justify;
+        
+        }
+        body{
+            background-color: #D58BDD;
+        }
+        section{
+            background-color: #905E96;
+            padding: 0.5rem;
+            min-width:320px;
+            max-width: 70%;
+            margin: 1rem auto 0;
+            /* border:1px solid red; */
+            display:flex;
+            flex-direction: column;
+            gap:0.5rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+
+        }
+        textarea{
+          
+            /* min-width:300px; */
+            background-color:wheat;
+            border-radius:10px;
+            padding:0.2rem;
+            text-align: center;
+            line-height: 25px;
+        
+        }
+    
+        textarea:focus{
+            border-radius: 1rem;
+            border:4px double green;
+        }
+        button{
+            padding:0.1rem 0.8rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            background-color:wheat;
+            
+        }
+        h1{ font-size: 1.5rem;
+            text-align: center;
+            margin:1rem 0;
+        }
+        /* ul{
+            list-style-type: none;
+        } */
+
+
+        /* li:before{
+            content:url('liststar.png');
+            display:inline-block;   
+            position: relative;
+            top:5px;
+            margin:0 0.4rem;    
+        } */
+        li{
+            
+            border-radius: 10px;
+            background-color: #C689C6; 
+            margin-top:10px;
+            padding:0.4rem 0.8rem 0.8rem;
+            font-size: 1.5rem;
+            line-height: 26px;
+            border:1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>&copy; By Naresh M Kushwaha</h1>
+        <label>
+           <textarea  id="input1" cols="30" rows="2" autofocus></textarea>
+        </label>
+        <div>
+         <button type="button" id="create" >Create</button>
+        </div>
+    </section>
+    
+    <h1>Task List</h1>
+    <section>
+        <ol id="task">
+            
+        </ol>
+    </section>
+
+    <script>
+        let btn1 = document.querySelector('button#create');
+
+        btn1.addEventListener('click',()=>{
+             let input1 = document.getElementById('input1');
+             let addtext = input1.value;
+
+             let li = document.createElement('li');
+             li.textContent +=  addtext;
+             li.setAttribute('ondblclick',"this.style.display='none';");
+             li.setAttribute('contenteditable',"true");
+             li.setAttribute('spellcheck',"false");
+
+             let ultask = document.querySelector('ol#task');
+             ultask.appendChild(li);
+
+             input1 = input1.value='';
+        });
+    </script>
+
+</body>
+</html>
