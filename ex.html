@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
+        <style>
         *{
             margin:0;
             padding:0;
@@ -13,6 +13,7 @@
             /* font:oblique small-caps bold 1rem/24px cursive;  */
             font:oblique bold 1rem/20px cursive;
             text-align: justify;
+            word-break: break-all;
         
         }
         body{
@@ -21,7 +22,7 @@
         section{
             background-color: #905E96;
             padding: 0.5rem;
-            min-width:320px;
+            min-width:300px;
             max-width: 70%;
             margin: 1rem auto 0;
             /* border:1px solid red; */
@@ -33,18 +34,20 @@
             border-radius: 1rem;
 
         }
-        textarea{
-          
-            /* min-width:300px; */
+        input{
+        
+            width:280px;
+            min-height:50px;
             background-color:wheat;
             border-radius:10px;
             padding:0.2rem;
             text-align: center;
             line-height: 25px;
+            
         
         }
     
-        textarea:focus{
+        input:focus{
             border-radius: 1rem;
             border:4px double green;
         }
@@ -55,13 +58,17 @@
             background-color:wheat;
             
         }
-        h1{ font-size: 1.5rem;
+        h1{
+            line-height: 25px;
+            font-size: 1.5rem;
             text-align: center;
             margin:1rem 0;
         }
-        /* ul{
-            list-style-type: none;
-        } */
+    
+        ul{
+            /* list-style-type: none; */
+            list-style-position:inside;
+        }
 
 
         /* li:before{
@@ -72,14 +79,20 @@
             margin:0 0.4rem;    
         } */
         li{
-            
+            /* width:200px; */
             border-radius: 10px;
             background-color: #C689C6; 
             margin-top:10px;
             padding:0.4rem 0.8rem 0.8rem;
             font-size: 1.5rem;
             line-height: 26px;
-/*             border:1px solid red; */
+            /* border:1px solid red; */
+        }
+
+        @media(max-width:425px){
+            li{
+                width:200px;
+            }
         }
 
     </style>
@@ -88,7 +101,7 @@
     <section>
         <h1>&copy; By Naresh M Kushwaha</h1>
         <label>
-           <textarea  id="input1" cols="30" rows="2" autofocus></textarea>
+           <input  id="input1" autofocus/>
         </label>
         <div>
          <button type="button" id="create" >Create</button>
